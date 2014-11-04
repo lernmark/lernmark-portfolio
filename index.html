@@ -158,7 +158,7 @@
 
 
 
-<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+<!-- <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script> -->
 
 
 </head>
@@ -229,8 +229,8 @@
 
 
 				<div>
-					<a href="http://lalalabel.com" target="_blank">Katarina Lernmark on Facebook</a>
-					<p><a href="http://lalalabel.com" target="_blank">La-la label on Facebook</a></p>
+					<a href="https://www.facebook.com/katarina.lernmark" target="_blank">Katarina Lernmark on Facebook</a>
+					<p><a href="https://www.facebook.com/lalalabelpage" target="_blank">La-la label on Facebook</a></p>
 				</div>
 			</div>
 		</div>		
@@ -255,8 +255,11 @@
 				  })();
 				</script>
 
+
 				<div class="g-plusone" data-size="medium"></div>
+				<!--
 				<a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Flernmark.se%2Findex.html%235711686740802117393&media=http%3A%2F%2Flh6.ggpht.com%2F-_ZqZ33ZoZ3U%2FT0P81VJZjJI%2FAAAAAAAAAI4%2FxrQDo-2jvQc%2FRabbitPillow.Above.png&description=bla%20bla%20bla" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a>
+				-->
 			</div>			
 		</div>
 
@@ -315,8 +318,7 @@
 			$("#albums").html("");
 			$("meta[itemprop=image]").attr("content",data.feed.entry[0].media$group.media$content[0].url);
 			$.each(data.feed.entry, function(i, item) {
-
-				if (item.gphoto$name.$t != "ScrapbookPhotos" && item.gphoto$name.$t != "ProfilePhotos") {
+				if (item.gphoto$name.$t != "ScrapbookPhotos" && item.gphoto$name.$t != "ProfilePhotos" && item.gphoto$numphotos.$t>0) {
 					var aid = item.gphoto$id.$t;
 
 					var c = $("<div/>").addClass("ui-widget album");
@@ -408,7 +410,7 @@ var album = function(aid) {
 
 			$("#album").append(item);
 			$("#album").show();
-			$(".pin-it-button").attr("href","http://pinterest.com/pin/create/button/?url=" + encodeURIComponent("http://www.lernmark.net/index.html#" + aid) + "&media=" + encodeURIComponent(data.feed.icon.$t) + "&description=" + encodeURIComponent(data.feed.subtitle.$t));
+			//$(".pin-it-button").attr("href","http://pinterest.com/pin/create/button/?url=" + encodeURIComponent("http://www.lernmark.net/index.html#" + aid) + "&media=" + encodeURIComponent(data.feed.icon.$t) + "&description=" + encodeURIComponent(data.feed.subtitle.$t));
 			
 		});
 		
